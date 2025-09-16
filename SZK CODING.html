@@ -4,55 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f8ff;
+        font-family: 'Montserrat', Arial, sans-serif;
+        background: linear-gradient(120deg, #f0f8ff 0%, #e0e7ff 100%);
         margin: 0;
         padding: 0;
+        min-height: 100vh;
     }
     header {
         background: linear-gradient(90deg, #7411b2 0%, #4a90e2 100%);
         color: #fff;
-        padding: 32px 0 24px 0;
+        padding: 40px 0 28px 0;
         text-align: center;
-        box-shadow: 0 4px 16px rgba(74,144,226,0.15);
+        box-shadow: 0 4px 24px rgba(74,144,226,0.18);
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
+        animation: fadeInDown 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
     header h1 {
-        font-size: 2.5em;
-        font-weight: bold;
-        letter-spacing: 2px;
-        margin-bottom: 8px;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
-        font-family: 'Segoe UI', 'Arial', sans-serif;
+        font-size: 2.7em;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 12px rgba(0,0,0,0.13);
+        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+        transition: color 0.3s;
+    }
+    header h1:hover {
+        color: #ffe082;
+        cursor: pointer;
     }
     header p {
         font-size: 1.2em;
         font-style: italic;
-        opacity: 0.85;
+        opacity: 0.92;
         margin-top: 0;
         margin-bottom: 0;
+        letter-spacing: 1px;
     }
     section {
-        margin: 30px auto;
-        max-width: 600px;
+        margin: 36px auto;
+        max-width: 650px;
         background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 28px 24px 24px 24px;
+        border-radius: 16px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.10);
         text-align: center;
+        transition: box-shadow 0.3s, transform 0.3s;
+        animation: fadeInUp 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    section:hover {
+        box-shadow: 0 8px 32px rgba(74,144,226,0.18);
+        transform: translateY(-4px) scale(1.01);
+    }
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
     section ul {
         text-align: left;
         display: inline-block;
         margin: 0 auto 20px auto;
+        padding-left: 0;
+    }
+    section ul li {
+        margin-bottom: 8px;
+        font-size: 1.08em;
+        transition: color 0.2s;
+    }
+    section ul li:hover {
+        color: #4a90e2;
     }
     section img {
         border-radius: 50%;
         display: block;
         margin: 0 auto 20px auto;
+        box-shadow: 0 2px 12px rgba(74,144,226,0.13);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    section img:hover {
+        transform: scale(1.07) rotate(-2deg);
+        box-shadow: 0 6px 24px rgba(74,144,226,0.22);
+    }
+    a, a:visited {
+        color: #4a90e2;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: #7411b2;
+        text-decoration: underline;
+    }
+    .btn-link {
+        display: inline-block;
+        background: #fff;
+        color: #4a90e2;
+        font-weight: bold;
+        padding: 12px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 1.1em;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .btn-link:hover {
+        background: #4a90e2;
+        color: #fff;
+        transform: scale(1.05);
+    }
+    video {
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(74,144,226,0.13);
+        margin-bottom: 12px;
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+    video:hover {
+        box-shadow: 0 6px 24px rgba(74,144,226,0.22);
+        transform: scale(1.03);
+    }
+    @media (max-width: 700px) {
+        section {
+            max-width: 98vw;
+            padding: 16px 4vw 16px 4vw;
+        }
+        header h1 {
+            font-size: 1.5em;
+        }
+        video {
+            width: 98vw;
+            height: auto;
+        }
     }
 </style>
 <body>
@@ -73,14 +162,32 @@
     <section>
         <h2>Portofolio</h2>
         <ul>
-            <li><strong>Project 1:</strong> Website Gwejh <a href="https://sandikurniawan.weebly.com/">Web gwejh</a></li>
-            <li><strong>Project 2:</strong> Aplikasi Kasir Sederhana</li>
-            <li><strong>Project 3:</strong> Desain UI Mobile</li>
+            <li><strong>EDITAN GABUT 1:</strong>
+                <br>
+                <video width="320" height="180" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(74,144,226,0.13); margin-top:8px;">
+                    <source src="https://drive.google.com/uc?export=download&id=1fnEOue7AX40jRi_04U6hqGk9Ya3udf_C" type="video/mp4">
+                    
+                </video>
+            </li>
+            <li><strong>EDITAN GABUT 2:</strong>
+                <br>
+                <video width="320" height="180" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(74,144,226,0.13); margin-top:8px;">
+                    <source src="https://drive.google.com/uc?export=download&id=1fp4FuKgfMbgStzWqGbw5yrwmntlUFgwL" type="video/mp4">
+                    
+                </video>
+            </li>
+            <li><strong>EDITAN GABUT 3:</strong> 
+                <br>
+                <video width="320" height="180" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(74,144,226,0.13); margin-top:8px;">
+                    <source src="https://drive.google.com/uc?export=download&id=1sQb1efNbHTa4bqWt33NNlvKErSBpATeD" type="video/mp4">
+                    
+                </video>
+            </li>
         </ul>
-        <h3>Video Karya</h3>
-        <video width="320" height="240" controls>
+        <h3>Chill</h3>
+        <video width="320" height="240" controls autoplay muted>
             <source src="https://motionbgs.com/media/8299/steve-minecraft.960x540.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
+            
         </video>
     </section>
     <section>
@@ -106,7 +213,7 @@
         <div style="background: linear-gradient(90deg, #4a90e2 0%, #7411b2 100%); padding: 24px; border-radius: 16px; box-shadow: 0 2px 8px rgba(74,144,226,0.15); text-align: center; color: #fff; margin-bottom: 30px;">
             <img src="https://i.pinimg.com/736x/04/77/8c/04778c716de2d35978bf40c828329df9.jpg" alt="Logo Website" width="80" style="border-radius: 50%; margin-bottom: 16px;">
             <h3 style="margin: 0 0 12px 0; font-size: 1.6em; letter-spacing: 1px;">Kunjungi Website Pribadi Saya</h3>
-            <a href="https://sandikurniawan.weebly.com/" target="_blank" style="display: inline-block; background: #fff; color: #4a90e2; font-weight: bold; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s, color 0.2s;">
+            <a href="https://sandikurniawan.weebly.com/" target="_blank" class="btn-link">
                 sandikurniawan.weebly.com
             </a>
             <p style="margin-top: 18px; font-size: 1em; opacity: 0.85;">Website ini berisi karya, blog, dan info tentang saya.</p>
@@ -115,5 +222,49 @@
     <footer style="text-align:center; margin:30px 0; color:#888;">
         &copy; 2025 SZK
     </footer>
+
+    <!-- Bagian Menarik Tambahan -->
+    <section>
+        <h2>Testimoni Teman</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 18px;">
+            <div style="background: #f0f8ff; border-radius: 12px; box-shadow: 0 2px 8px rgba(74,144,226,0.10); padding: 18px 20px; max-width: 260px; min-width: 180px;">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teman 1" width="48" style="border-radius:50%; margin-bottom:8px;">
+                <p style="font-style:italic; margin:0 0 8px 0;">"Sandi itu kreatif banget, hasil desainnya selalu keren!"</p>
+                <span style="font-weight:bold; color:#4a90e2;">- Andhika Juara 1</span>
+            </div>
+            <div style="background: #f0f8ff; border-radius: 12px; box-shadow: 0 2px 8px rgba(74,144,226,0.10); padding: 18px 20px; max-width: 260px; min-width: 180px;">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Teman 2" width="48" style="border-radius:50%; margin-bottom:8px;">
+                <p style="font-style:italic; margin:0 0 8px 0;">"Kerja bareng Sandi selalu seru, idenya out of the box!"</p>
+                <span style="font-weight:bold; color:#4a90e2;">- Reyna</span>
+            </div>
+            <div style="background: #f0f8ff; border-radius: 12px; box-shadow: 0 2px 8px rgba(74,144,226,0.10); padding: 18px 20px; max-width: 260px; min-width: 180px;">
+                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Teman 3" width="48" style="border-radius:50%; margin-bottom:8px;">
+                <p style="font-style:italic; margin:0 0 8px 0;">"Sandi jago edit video, hasilnya selalu memuaskan!"</p>
+                <span style="font-weight:bold; color:#4a90e2;">- Wenda Legenda</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Quotes Favorit</h2>
+        <blockquote style="font-size:1.2em; color:#7411b2; background:#f8f6ff; border-left:5px solid #4a90e2; margin:24px auto; padding:18px 24px; border-radius:10px; max-width:500px;">
+            "Jangan pernah takut mencoba hal baru, karena semua hal besar berawal dari keberanian kecil."<br>
+            <span style="font-size:0.9em; color:#888;">- Sandi Kurniawan Perdana</span>
+        </blockquote>
+    </section>
+
+    <section>
+        <h2>Kontak & Sosial Media</h2>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px; margin-top:18px;">
+            <a href="mailto:sanzkbusiness@gmail.com" class="btn-link" style="background:#4a90e2; color:#fff;">Email</a>
+            <a href="https://www.instagram.com/sannxzk" target="_blank" class="btn-link" style="background:#e4405f; color:#fff;">Instagram</a>
+            <a href="https://wa.me/6281257381341" target="_blank" class="btn-link" style="background:#25d366; color:#fff;">WhatsApp</a>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="color:#4a90e2;">Terima Kasih!</h2>
+        <p style="font-size:1.2em; color:#555; margin:18px auto 32px auto; max-width:500px;">Terima kasih telah berkunjung ke web saya. Semoga portofolio ini bisa menginspirasi dan bermanfaat.</p>
+    </section>
 </body>
 </html>
